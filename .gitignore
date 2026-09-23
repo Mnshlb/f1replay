@@ -1,0 +1,55 @@
+# Telemetry cache — gigabytes of FastF1 session data, refetched on demand.
+# The app now defaults to the platform user-cache dir; this covers source runs.
+cache/
+
+# Virtual environments
+venv/
+f1.venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors, IDEs and local tool config
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+.local/
+
+# ── Secrets and credentials — never commit ───────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+.netrc
+credentials.json
+client_secret*.json
+service-account*.json
+secrets.*
+*_secret*
+*_token*
+*apikey*
+*api_key*
+
+# Local dotfile directories and machine-specific config — these can hold
+# credentials or personal settings and should never be committed.
+.*/
+# anchored to the repo root: an unanchored negation also un-ignores the
+# .gitignore files that live inside venv/ and f1.venv/
+!/.github/
+!/.gitignore

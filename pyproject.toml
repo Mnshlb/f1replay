@@ -1,0 +1,76 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "f1replay"
+dynamic = ["version"]
+description = "Replay any Formula 1 race from real telemetry — a pit-wall engineering console."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }   # MIT for code; circuits.py is ODbL — see LICENSE
+# Email deliberately omitted — a package author email is public once this is
+# pushed. Add `email = "..."` here if you want it published.
+authors = [{ name = "Manshul" }]
+keywords = ["formula1", "f1", "telemetry", "replay", "fastf1", "motorsport"]
+classifiers = [
+    "Environment :: MacOS X",
+    "Environment :: Win32 (MS Windows)",
+    "Environment :: X11 Applications",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Games/Entertainment :: Simulation",
+    "Topic :: Multimedia :: Graphics :: Presentation",
+]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Dependency versions live HERE — this is the single source of truth.
+#
+# Lower bounds are the versions this has actually been exercised against;
+# upper bounds stop a major release breaking the app silently. To reproduce the
+# exact tested environment down to transitive packages, use requirements.lock:
+#     pip install -r requirements.lock
+# ─────────────────────────────────────────────────────────────────────────────
+dependencies = [
+    "arcade>=3.3.3,<4",
+    "fastf1>=3.8.1,<4",
+    "numpy>=2.0,<3",
+    "pandas>=2.2,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Mnshlb/f1replay"
+Repository = "https://github.com/Mnshlb/f1replay"
+Issues = "https://github.com/Mnshlb/f1replay/issues"
+
+# `f1replay` on PATH once installed.
+[project.scripts]
+f1replay = "f1replay.cli:main"
+
+[tool.hatch.version]
+path = "f1replay/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["f1replay"]
+
+[tool.hatch.build.targets.sdist]
+# Keep the multi-gigabyte telemetry cache and the local venvs out of the sdist.
+exclude = [
+    "cache/",
+    "venv/",
+    "f1.venv/",
+    ".github/",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

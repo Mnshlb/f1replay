@@ -1,0 +1,1 @@
+"""UI layer — arcade window and interaction."""
