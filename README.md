@@ -13,44 +13,25 @@ single amber accent, purple reserved for the fastest lap.
 
 ![Session select](docs/f1_selection.png)
 
-## Install
+> **Source-available, not open source.** This code is published so it can be
+> read and evaluated. It is **not licensed for use** — see [LICENSE](LICENSE).
+> No permission is granted to run, copy, modify or redistribute it.
 
-Requires **Python 3.10+** and an OpenGL-capable machine.
+## Requirements
 
-**Run it straight from git** — no clone, no setup:
+Python 3.10+ and an OpenGL-capable machine. Dependency versions are pinned in
+[`pyproject.toml`](pyproject.toml) and [`requirements.lock`](requirements.lock).
 
-```bash
-uvx --from git+https://github.com/Mnshlb/f1replay f1replay austria 2019
-```
+### No API keys
 
-**Install the command permanently:**
+The app needs no account, token or API key. Timing and telemetry are read from
+publicly accessible sources at runtime; nothing is bundled in this repository.
 
-```bash
-uv tool install git+https://github.com/Mnshlb/f1replay     # or:
-pipx install git+https://github.com/Mnshlb/f1replay        # or:
-pip install git+https://github.com/Mnshlb/f1replay
-```
+## Command line
 
-Either way you get `f1replay` on your PATH.
+The application exposes a single command:
 
-**From a clone, for development:**
-
-```bash
-git clone https://github.com/Mnshlb/f1replay && cd f1replay
-python3 -m venv .venv && source .venv/bin/activate
-pip install -e .                      # or: pip install -r requirements.lock
-```
-
-### No API keys required
-
-F1 Race Replay needs no account, token or API key. FastF1 reads publicly accessible
-timing and telemetry; every install fetches its own data under its own
-identity, with nothing shared between users. Session data is cached per-user
-(see [Cache](#cache)), so your downloads stay yours.
-
-## Run
-
-```bash
+```text
 f1replay                        # session-select screen
 f1replay austria                # latest season's Austrian Grand Prix
 f1replay austria 2019           # the 2019 Austrian Grand Prix
@@ -137,18 +118,16 @@ to a couple of gigabytes; delete the directory to reclaim it.
 ## Dependencies
 
 Version ranges live in [`pyproject.toml`](pyproject.toml) — the single source
-of truth. [`requirements.lock`](requirements.lock) pins the exact environment
-this was built and tested against (48 packages, Python 3.14.2), for when you
-want a byte-identical setup:
+of truth. [`requirements.lock`](requirements.lock) records the exact
+environment this was built and tested against: 44 packages, Python 3.14.2.
 
-```bash
-pip install -r requirements.lock
-```
+All dependencies are permissive-licensed (MIT, BSD, Apache-2.0, PSF, and
+MPL-2.0 for `certifi`); none are copyleft and none are vendored here.
 
 ## Project layout
 
 ```
-main.py              run from a source checkout without installing
+main.py              entry point for a source checkout
 pyproject.toml       package metadata, dependency ranges, `f1replay` command
 requirements.lock    exact tested environment
 f1replay/
@@ -217,14 +196,16 @@ you are viewing.
 
 ## Licence
 
-Source code is MIT. The bundled circuit geometry in `f1replay/ui/circuits.py`
-is **not** — it is OpenStreetMap-derived data under the
-[ODbL](https://opendatacommons.org/licenses/odbl/1-0/), which is share-alike
-and requires attribution if you redistribute it. OpenStreetMap is credited in
-the app's footer as ODbL §4.3 requires. See [LICENSE](LICENSE).
+**Copyright (c) 2026 Manshul. All Rights Reserved.** No permission is granted
+to use, copy, run, modify or redistribute this software. Public visibility of
+this repository does not grant a licence to it. See [LICENSE](LICENSE).
 
-Dependencies are all permissive — MIT, BSD, Apache-2.0, PSF, with `certifi`
-under MPL-2.0. None are strong copyleft, none are vendored into this package,
-and no third-party code or fonts are redistributed here.
+One exception: `f1replay/ui/circuits.py` is not the author's work to restrict.
+It is OpenStreetMap-derived data under the
+[ODbL](https://opendatacommons.org/licenses/odbl/1-0/) and remains available
+under those terms, with attribution, independently of the above.
+
+Third-party dependencies are not distributed here and remain under their own
+licences (MIT, BSD, Apache-2.0, PSF, and MPL-2.0 for `certifi`).
 
 This is an unofficial project and is not associated with Formula 1 or the FIA.

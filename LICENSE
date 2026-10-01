@@ -1,57 +1,69 @@
-PITWALL is distributed under two licenses: the source code under the MIT
-License, and the bundled circuit geometry under the Open Database License.
-They are separate; see "Circuit data" below.
+F1 RACE REPLAY — PROPRIETARY LICENCE
+Copyright (c) 2026 Manshul. All Rights Reserved.
 
 ===============================================================================
-1. SOURCE CODE — MIT License
+1. NO LICENCE GRANTED
 ===============================================================================
 
-Copyright (c) 2026 Manshul
+This source code is published for the sole purpose of public review — for
+example, by prospective employers evaluating the author's work.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+NO permission is granted to any person to use, copy, reproduce, run, execute,
+modify, adapt, translate, merge, publish, distribute, sublicense, sell, or
+create derivative works from this software or any portion of it.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The fact that this repository is publicly visible, and the technical ability
+to view, clone or download it, do NOT grant any licence to it. All rights not
+expressly granted above are reserved by the copyright holder. Nothing here is
+granted by implication, estoppel, or otherwise.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Enquiries about licensing: open an issue on the repository.
 
 ===============================================================================
-2. CIRCUIT DATA — Open Database License (ODbL) v1.0
+2. EXCEPTION — CIRCUIT DATA (Open Database License)
 ===============================================================================
 
-The file `pitwall/ui/circuits.py` is NOT covered by the MIT License above.
+Section 1 does NOT apply to the file `f1replay/ui/circuits.py`.
 
-It is a derived database generated from the f1-circuits GeoJSON dataset
-(https://github.com/bacinger/f1-circuits), which is itself derived from
-OpenStreetMap.
+That file is not the author's work to restrict. It is a derived database
+generated from the f1-circuits GeoJSON dataset
+(https://github.com/bacinger/f1-circuits), itself derived from OpenStreetMap:
 
     Circuit geometry © OpenStreetMap contributors, available under the
     Open Database License (ODbL) v1.0.
     https://opendatacommons.org/licenses/odbl/1-0/
     https://www.openstreetmap.org/copyright
 
-ODbL is a share-alike license. If you distribute this circuit data, or a
-database derived from it, you must attribute OpenStreetMap contributors and
-license that derived database under ODbL. This obligation travels with the
-data regardless of the MIT license on the surrounding code.
+It remains available under the ODbL, which is a share-alike licence: you may
+use and redistribute that data, and databases derived from it, provided you
+attribute OpenStreetMap contributors and license any derived database under
+the ODbL. This obligation runs with the data and is unaffected by the
+reservation of rights in Section 1.
 
 ===============================================================================
-3. TRADEMARKS
+3. THIRD-PARTY SOFTWARE
+===============================================================================
+
+This software depends on third-party packages that are NOT covered by this
+licence and remain under their own terms (MIT, BSD, Apache-2.0, PSF and, for
+certifi, MPL-2.0). They are not distributed with this repository; they are
+installed separately from their own sources.
+
+===============================================================================
+4. TRADEMARKS
 ===============================================================================
 
 This is an unofficial project, not associated with, endorsed by, or affiliated
 with Formula 1, the FIA, or any Formula 1 team. F1, FORMULA 1, GRAND PRIX and
 related marks are trademarks of Formula One Licensing BV. Timing and telemetry
-data is retrieved via FastF1 from publicly accessible sources and remains the
-property of its respective owners.
+data is retrieved at runtime from publicly accessible sources and remains the
+property of its respective owners. No such data is contained in this
+repository.
+
+===============================================================================
+5. NO WARRANTY
+===============================================================================
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY ARISING FROM OR IN CONNECTION WITH THIS SOFTWARE.

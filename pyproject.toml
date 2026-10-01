@@ -8,12 +8,14 @@ dynamic = ["version"]
 description = "Replay any Formula 1 race from real telemetry — a pit-wall engineering console."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { file = "LICENSE" }   # MIT for code; circuits.py is ODbL — see LICENSE
+license = { file = "LICENSE" }   # proprietary, all rights reserved; circuits.py is ODbL
 # Email deliberately omitted — a package author email is public once this is
 # pushed. Add `email = "..."` here if you want it published.
 authors = [{ name = "Manshul" }]
 keywords = ["formula1", "f1", "telemetry", "replay", "fastf1", "motorsport"]
 classifiers = [
+    # Refuses upload to PyPI — this package is not for distribution.
+    "Private :: Do Not Upload",
     "Environment :: MacOS X",
     "Environment :: Win32 (MS Windows)",
     "Environment :: X11 Applications",
